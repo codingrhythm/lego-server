@@ -42,8 +42,12 @@ func loadPage(title string) (*Page, error) {
 
 func dataHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	page, _ := loadPage("data")
-	fmt.Fprintf(w, "%s", page.Body)
+	if r.Method == "GET" {
+		page, _ := loadPage("data")
+		fmt.Fprintf(w, "%s", page.Body)
+	} else {
+		fmt.Fprintf(w, "{\"success\": true}")
+	}
 }
 
 func uploadFileHandler() http.HandlerFunc {

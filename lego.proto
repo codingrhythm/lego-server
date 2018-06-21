@@ -1,0 +1,28 @@
+syntax = "proto3";
+package lego;
+
+service Lego {
+  rpc SendRecord (LegoRecord) returns (LegoResponse);
+}
+
+message LegoRecordField {
+  string id = 1;
+  string name = 2;
+  string data = 3;
+}
+
+message LegoRecordSection {
+  string id = 1;
+  string name = 2;
+  repeated LegoRecordField fields = 3;
+}
+
+message LegoRecord {
+  string id = 1;
+  string name = 2;
+  repeated LegoRecordSection sections = 3;
+}
+
+message LegoResponse {
+  int32 success = 1;
+}

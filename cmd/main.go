@@ -25,10 +25,28 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8512", nil))
 }
 
-// Page is data structure
+// Question data struct
+type Question struct {
+	Id           string
+	Title        string
+	ResponseType int8
+	Description  string
+	Order        int8
+}
+
+// Page data struct
 type Page struct {
-	Title string
-	Body  []byte
+	Id        string
+	Title     string
+	Order     int8
+	Questions []Question
+}
+
+// Template data struct
+type Template struct {
+	Id    string
+	Name  string
+	Pages []Page
 }
 
 func loadPage(title string) (*Page, error) {

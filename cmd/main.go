@@ -2,6 +2,7 @@ package main
 
 import (
 	"crypto/rand"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -9,6 +10,8 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+
+	"github.com/SafetyCulture/lego-server"
 )
 
 const maxUploadSize = 20 * 1024 * 1024 // 20 mb
@@ -25,44 +28,17 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8512", nil))
 }
 
-// Question data struct
-type Question struct {
-	Id           string
-	Title        string
-	ResponseType int8
-	Description  string
-	Order        int8
-}
-
-// Page data struct
-type Page struct {
-	Id        string
-	Title     string
-	Order     int8
-	Questions []Question
-}
-
-// Template data struct
-type Template struct {
-	Id    string
-	Name  string
-	Pages []Page
-}
-
-func loadPage(title string) (*Page, error) {
-	filename := title + ".json"
-	body, err := ioutil.ReadFile(filename)
-	if err != nil {
-		return nil, err
-	}
-	return &Page{Title: title, Body: body}, nil
-}
-
 func dataHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	if r.Method == "GET" {
-		page, _ := loadPage("data")
-		fmt.Fprintf(w, "%s", page.Body)
+		data := lego.DataGen.GenerateData()
+		b, err := json.Marshal(data)
+
+		if err != nil {
+			fmt.Fprintf(w, "{\"success\": false}")
+		} else {
+			fmt.Fprintf(w, "%s", b)
+		}
 	} else {
 		fmt.Fprintf(w, "{\"success\": true}")
 	}

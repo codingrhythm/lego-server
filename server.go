@@ -26,10 +26,11 @@ func (s *Server) Close() {
 
 //SendRecord API
 func (s *Server) SendRecord(context.Context, *LegoRecord) (*LegoResponse, error) {
-	return nil, nil
+	return &LegoResponse{Success: 1}, nil
 }
 
 //GetData API
 func (s *Server) GetData(context.Context, *GetRequest) (*Template, error) {
-	return nil, nil
+	data := DataGen.GenerateData()
+	return data, nil
 }

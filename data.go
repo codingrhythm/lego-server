@@ -4,29 +4,29 @@ import (
 	uuid "github.com/satori/go.uuid"
 )
 
-// Question data struct
-type Question struct {
-	ID           string
-	Title        string
-	ResponseType int
-	Description  string
-	Order        int
-}
+// // Question data struct
+// type Question struct {
+// 	ID           string
+// 	Title        string
+// 	ResponseType int
+// 	Description  string
+// 	Order        int
+// }
 
-// Page data struct
-type Page struct {
-	ID        string
-	Title     string
-	Order     int
-	Questions []*Question
-}
+// // Page data struct
+// type Page struct {
+// 	ID        string
+// 	Title     string
+// 	Order     int
+// 	Questions []*Question
+// }
 
-// Template data struct
-type Template struct {
-	ID    string
-	Name  string
-	Pages []*Page
-}
+// // Template data struct
+// type Template struct {
+// 	ID    string
+// 	Name  string
+// 	Pages []*Page
+// }
 
 // DataGenerator type
 type DataGenerator struct {
@@ -42,12 +42,14 @@ func init() {
 // GenerateData generates template data
 func (g *DataGenerator) GenerateData() *Template {
 	var pages []*Page
-	for j := 0; j < 100; j++ {
+	var j int32
+	var i int32
+	for j = 0; j < 100; j++ {
 		var questions []*Question
 
-		for i := 0; i < 100; i++ {
+		for i = 0; i < 100; i++ {
 			question := &Question{
-				ID:           uuid.NewV4().String(),
+				Id:           uuid.NewV4().String(),
 				Title:        "Question title",
 				ResponseType: 3,
 				Description:  "This is the description for the question. This is the description for the question. This is the description for the question. This is the description for the question.",
@@ -57,7 +59,7 @@ func (g *DataGenerator) GenerateData() *Template {
 		}
 
 		page := &Page{
-			ID:        uuid.NewV4().String(),
+			Id:        uuid.NewV4().String(),
 			Title:     "Page title",
 			Order:     j,
 			Questions: questions,
@@ -66,7 +68,7 @@ func (g *DataGenerator) GenerateData() *Template {
 	}
 
 	return &Template{
-		ID:    uuid.NewV4().String(),
+		Id:    uuid.NewV4().String(),
 		Name:  "Template name",
 		Pages: pages,
 	}

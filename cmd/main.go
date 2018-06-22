@@ -7,11 +7,16 @@ import (
 	"io/ioutil"
 	"log"
 	"mime"
+	"net"
 	"net/http"
 	"os"
 	"path/filepath"
 
 	"github.com/SafetyCulture/lego-server"
+	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
+	grpc_ctxtags "github.com/grpc-ecosystem/go-grpc-middleware/tags"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 const maxUploadSize = 20 * 1024 * 1024 // 20 mb
@@ -25,7 +30,29 @@ func main() {
 	fs := http.FileServer(http.Dir(filePath))
 	http.Handle("/files/", http.StripPrefix("/files", fs))
 	log.Print("Server started on localhost:8512, use /upload for uploading files and /files/{fileName} for downloading")
+	go setupGRPC()
 	log.Fatal(http.ListenAndServe(":8512", nil))
+}
+
+func setupGRPC() {
+	var gRPCServer *grpc.Server
+	log.Println("Configuring server to run insecure. NO_TLS.")
+	interceptorChain := grpc_middleware.ChainUnaryServer(
+		grpc_ctxtags.UnaryServerInterceptor(grpc_ctxtags.WithFieldExtractor(grpc_ctxtags.CodeGenRequestFieldExtractor)),
+	)
+	gRPCServer = grpc.NewServer(
+		grpc_middleware.WithUnaryServerChain(interceptorChain),
+	)
+
+	lego.RegisterLegoServer(gRPCServer, lego.Srv)
+	reflection.Register(gRPCServer)
+
+	// Time to start the server
+	lis, _ := net.Listen("tcp", ":8513")
+	log.Printf("Starting gRPC server, listening on %v", lis.Addr())
+	if err := gRPCServer.Serve(lis); err != nil {
+		log.Fatalf("Failed to serve: %v", err)
+	}
 }
 
 func dataHandler(w http.ResponseWriter, r *http.Request) {

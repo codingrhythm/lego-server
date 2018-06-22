@@ -18,6 +18,8 @@
 // @@protoc_insertion_point(includes)
 
 namespace lego {
+class GetRequestDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<GetRequest> {
+} _GetRequest_default_instance_;
 class LegoRecordFieldDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<LegoRecordField> {
 } _LegoRecordField_default_instance_;
 class LegoRecordSectionDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<LegoRecordSection> {
@@ -26,13 +28,19 @@ class LegoRecordDefaultTypeInternal : public ::google::protobuf::internal::Expli
 } _LegoRecord_default_instance_;
 class LegoResponseDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<LegoResponse> {
 } _LegoResponse_default_instance_;
+class QuestionDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Question> {
+} _Question_default_instance_;
+class PageDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Page> {
+} _Page_default_instance_;
+class TemplateDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Template> {
+} _Template_default_instance_;
 
 namespace protobuf_lego_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[4];
+::google::protobuf::Metadata file_level_metadata[8];
 
 }  // namespace
 
@@ -51,9 +59,18 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
 };
 
 const ::google::protobuf::uint32 TableStruct::offsets[] = {
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GetRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LegoRecordField, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -84,20 +101,55 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LegoResponse, success_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Question, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Question, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Question, title_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Question, response_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Question, description_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Question, order_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Page, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Page, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Page, title_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Page, order_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Page, questions_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Template, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Template, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Template, name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Template, pages_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
-  { 0, -1, sizeof(LegoRecordField)},
-  { 8, -1, sizeof(LegoRecordSection)},
-  { 16, -1, sizeof(LegoRecord)},
-  { 24, -1, sizeof(LegoResponse)},
+  { 0, -1, sizeof(GetRequest)},
+  { 5, -1, sizeof(LegoRecordField)},
+  { 13, -1, sizeof(LegoRecordSection)},
+  { 21, -1, sizeof(LegoRecord)},
+  { 29, -1, sizeof(LegoResponse)},
+  { 35, -1, sizeof(Question)},
+  { 45, -1, sizeof(Page)},
+  { 54, -1, sizeof(Template)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&_GetRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_LegoRecordField_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_LegoRecordSection_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_LegoRecord_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_LegoResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_Question_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_Page_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_Template_default_instance_),
 };
 
 namespace {
@@ -118,30 +170,42 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 4);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 8);
 }
 
 }  // namespace
 
 void TableStruct::Shutdown() {
-  _LegoRecordField_default_instance_.Shutdown();
+  _GetRequest_default_instance_.Shutdown();
   delete file_level_metadata[0].reflection;
-  _LegoRecordSection_default_instance_.Shutdown();
+  _LegoRecordField_default_instance_.Shutdown();
   delete file_level_metadata[1].reflection;
-  _LegoRecord_default_instance_.Shutdown();
+  _LegoRecordSection_default_instance_.Shutdown();
   delete file_level_metadata[2].reflection;
-  _LegoResponse_default_instance_.Shutdown();
+  _LegoRecord_default_instance_.Shutdown();
   delete file_level_metadata[3].reflection;
+  _LegoResponse_default_instance_.Shutdown();
+  delete file_level_metadata[4].reflection;
+  _Question_default_instance_.Shutdown();
+  delete file_level_metadata[5].reflection;
+  _Page_default_instance_.Shutdown();
+  delete file_level_metadata[6].reflection;
+  _Template_default_instance_.Shutdown();
+  delete file_level_metadata[7].reflection;
 }
 
 void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::internal::InitProtobufDefaults();
+  _GetRequest_default_instance_.DefaultConstruct();
   _LegoRecordField_default_instance_.DefaultConstruct();
   _LegoRecordSection_default_instance_.DefaultConstruct();
   _LegoRecord_default_instance_.DefaultConstruct();
   _LegoResponse_default_instance_.DefaultConstruct();
+  _Question_default_instance_.DefaultConstruct();
+  _Page_default_instance_.DefaultConstruct();
+  _Template_default_instance_.DefaultConstruct();
 }
 
 void InitDefaults() {
@@ -151,18 +215,26 @@ void InitDefaults() {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
-      "\n\nlego.proto\022\004lego\"9\n\017LegoRecordField\022\n\n"
-      "\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004data\030\003 \001(\t\"T\n"
-      "\021LegoRecordSection\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002"
-      " \001(\t\022%\n\006fields\030\003 \003(\0132\025.lego.LegoRecordFi"
-      "eld\"Q\n\nLegoRecord\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 "
-      "\001(\t\022)\n\010sections\030\003 \003(\0132\027.lego.LegoRecordS"
-      "ection\"\037\n\014LegoResponse\022\017\n\007success\030\001 \001(\0052"
-      ":\n\004Lego\0222\n\nSendRecord\022\020.lego.LegoRecord\032"
-      "\022.lego.LegoResponseb\006proto3"
+      "\n\nlego.proto\022\004lego\"\014\n\nGetRequest\"9\n\017Lego"
+      "RecordField\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n"
+      "\004data\030\003 \001(\t\"T\n\021LegoRecordSection\022\n\n\002id\030\001"
+      " \001(\t\022\014\n\004name\030\002 \001(\t\022%\n\006fields\030\003 \003(\0132\025.leg"
+      "o.LegoRecordField\"Q\n\nLegoRecord\022\n\n\002id\030\001 "
+      "\001(\t\022\014\n\004name\030\002 \001(\t\022)\n\010sections\030\003 \003(\0132\027.le"
+      "go.LegoRecordSection\"\037\n\014LegoResponse\022\017\n\007"
+      "success\030\001 \001(\005\"`\n\010Question\022\n\n\002id\030\001 \001(\t\022\r\n"
+      "\005title\030\002 \001(\t\022\025\n\rresponse_type\030\003 \001(\005\022\023\n\013d"
+      "escription\030\004 \001(\t\022\r\n\005order\030\005 \001(\005\"S\n\004Page\022"
+      "\n\n\002id\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\r\n\005order\030\003 \001("
+      "\005\022!\n\tquestions\030\004 \003(\0132\016.lego.Question\"\?\n\010"
+      "Template\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\031\n\005pa"
+      "ges\030\003 \003(\0132\n.lego.Page2g\n\004Lego\0222\n\nSendRec"
+      "ord\022\020.lego.LegoRecord\032\022.lego.LegoRespons"
+      "e\022+\n\007GetData\022\020.lego.GetRequest\032\016.lego.Te"
+      "mplateb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 347);
+      descriptor, 654);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "lego.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -181,6 +253,183 @@ struct StaticDescriptorInitializer {
 
 }  // namespace protobuf_lego_2eproto
 
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+GetRequest::GetRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_lego_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:lego.GetRequest)
+}
+GetRequest::GetRequest(const GetRequest& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:lego.GetRequest)
+}
+
+void GetRequest::SharedCtor() {
+  _cached_size_ = 0;
+}
+
+GetRequest::~GetRequest() {
+  // @@protoc_insertion_point(destructor:lego.GetRequest)
+  SharedDtor();
+}
+
+void GetRequest::SharedDtor() {
+}
+
+void GetRequest::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* GetRequest::descriptor() {
+  protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const GetRequest& GetRequest::default_instance() {
+  protobuf_lego_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+GetRequest* GetRequest::New(::google::protobuf::Arena* arena) const {
+  GetRequest* n = new GetRequest;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void GetRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:lego.GetRequest)
+}
+
+bool GetRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:lego.GetRequest)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0 ||
+        ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:lego.GetRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:lego.GetRequest)
+  return false;
+#undef DO_
+}
+
+void GetRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:lego.GetRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // @@protoc_insertion_point(serialize_end:lego.GetRequest)
+}
+
+::google::protobuf::uint8* GetRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:lego.GetRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // @@protoc_insertion_point(serialize_to_array_end:lego.GetRequest)
+  return target;
+}
+
+size_t GetRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:lego.GetRequest)
+  size_t total_size = 0;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void GetRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:lego.GetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetRequest* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const GetRequest>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:lego.GetRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:lego.GetRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetRequest::MergeFrom(const GetRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:lego.GetRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void GetRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:lego.GetRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetRequest::CopyFrom(const GetRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:lego.GetRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRequest::IsInitialized() const {
+  return true;
+}
+
+void GetRequest::Swap(GetRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GetRequest::InternalSwap(GetRequest* other) {
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata GetRequest::GetMetadata() const {
+  protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// GetRequest
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -1871,6 +2120,1624 @@ void LegoResponse::set_success(::google::protobuf::int32 value) {
   
   success_ = value;
   // @@protoc_insertion_point(field_set:lego.LegoResponse.success)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Question::kIdFieldNumber;
+const int Question::kTitleFieldNumber;
+const int Question::kResponseTypeFieldNumber;
+const int Question::kDescriptionFieldNumber;
+const int Question::kOrderFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Question::Question()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_lego_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:lego.Question)
+}
+Question::Question(const Question& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.id().size() > 0) {
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  title_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.title().size() > 0) {
+    title_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.title_);
+  }
+  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.description().size() > 0) {
+    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
+  ::memcpy(&response_type_, &from.response_type_,
+    reinterpret_cast<char*>(&order_) -
+    reinterpret_cast<char*>(&response_type_) + sizeof(order_));
+  // @@protoc_insertion_point(copy_constructor:lego.Question)
+}
+
+void Question::SharedCtor() {
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  title_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&response_type_, 0, reinterpret_cast<char*>(&order_) -
+    reinterpret_cast<char*>(&response_type_) + sizeof(order_));
+  _cached_size_ = 0;
+}
+
+Question::~Question() {
+  // @@protoc_insertion_point(destructor:lego.Question)
+  SharedDtor();
+}
+
+void Question::SharedDtor() {
+  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  title_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void Question::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Question::descriptor() {
+  protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Question& Question::default_instance() {
+  protobuf_lego_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+Question* Question::New(::google::protobuf::Arena* arena) const {
+  Question* n = new Question;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Question::Clear() {
+// @@protoc_insertion_point(message_clear_start:lego.Question)
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&response_type_, 0, reinterpret_cast<char*>(&order_) -
+    reinterpret_cast<char*>(&response_type_) + sizeof(order_));
+}
+
+bool Question::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:lego.Question)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->id().data(), this->id().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "lego.Question.id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string title = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_title()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->title().data(), this->title().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "lego.Question.title"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 response_type = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &response_type_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string description = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_description()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->description().data(), this->description().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "lego.Question.description"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 order = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &order_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:lego.Question)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:lego.Question)
+  return false;
+#undef DO_
+}
+
+void Question::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:lego.Question)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), this->id().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Question.id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->id(), output);
+  }
+
+  // string title = 2;
+  if (this->title().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->title().data(), this->title().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Question.title");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->title(), output);
+  }
+
+  // int32 response_type = 3;
+  if (this->response_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->response_type(), output);
+  }
+
+  // string description = 4;
+  if (this->description().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->description().data(), this->description().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Question.description");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->description(), output);
+  }
+
+  // int32 order = 5;
+  if (this->order() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->order(), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:lego.Question)
+}
+
+::google::protobuf::uint8* Question::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:lego.Question)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), this->id().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Question.id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->id(), target);
+  }
+
+  // string title = 2;
+  if (this->title().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->title().data(), this->title().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Question.title");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->title(), target);
+  }
+
+  // int32 response_type = 3;
+  if (this->response_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->response_type(), target);
+  }
+
+  // string description = 4;
+  if (this->description().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->description().data(), this->description().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Question.description");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->description(), target);
+  }
+
+  // int32 order = 5;
+  if (this->order() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->order(), target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:lego.Question)
+  return target;
+}
+
+size_t Question::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:lego.Question)
+  size_t total_size = 0;
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->id());
+  }
+
+  // string title = 2;
+  if (this->title().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->title());
+  }
+
+  // string description = 4;
+  if (this->description().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->description());
+  }
+
+  // int32 response_type = 3;
+  if (this->response_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->response_type());
+  }
+
+  // int32 order = 5;
+  if (this->order() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->order());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Question::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:lego.Question)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Question* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Question>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:lego.Question)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:lego.Question)
+    MergeFrom(*source);
+  }
+}
+
+void Question::MergeFrom(const Question& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:lego.Question)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.id().size() > 0) {
+
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  if (from.title().size() > 0) {
+
+    title_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.title_);
+  }
+  if (from.description().size() > 0) {
+
+    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
+  if (from.response_type() != 0) {
+    set_response_type(from.response_type());
+  }
+  if (from.order() != 0) {
+    set_order(from.order());
+  }
+}
+
+void Question::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:lego.Question)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Question::CopyFrom(const Question& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:lego.Question)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Question::IsInitialized() const {
+  return true;
+}
+
+void Question::Swap(Question* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Question::InternalSwap(Question* other) {
+  id_.Swap(&other->id_);
+  title_.Swap(&other->title_);
+  description_.Swap(&other->description_);
+  std::swap(response_type_, other->response_type_);
+  std::swap(order_, other->order_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Question::GetMetadata() const {
+  protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Question
+
+// string id = 1;
+void Question::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& Question::id() const {
+  // @@protoc_insertion_point(field_get:lego.Question.id)
+  return id_.GetNoArena();
+}
+void Question::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Question.id)
+}
+#if LANG_CXX11
+void Question::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Question.id)
+}
+#endif
+void Question::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Question.id)
+}
+void Question::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Question.id)
+}
+::std::string* Question::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Question.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Question::release_id() {
+  // @@protoc_insertion_point(field_release:lego.Question.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Question::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:lego.Question.id)
+}
+
+// string title = 2;
+void Question::clear_title() {
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& Question::title() const {
+  // @@protoc_insertion_point(field_get:lego.Question.title)
+  return title_.GetNoArena();
+}
+void Question::set_title(const ::std::string& value) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Question.title)
+}
+#if LANG_CXX11
+void Question::set_title(::std::string&& value) {
+  
+  title_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Question.title)
+}
+#endif
+void Question::set_title(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Question.title)
+}
+void Question::set_title(const char* value, size_t size) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Question.title)
+}
+::std::string* Question::mutable_title() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Question.title)
+  return title_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Question::release_title() {
+  // @@protoc_insertion_point(field_release:lego.Question.title)
+  
+  return title_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Question::set_allocated_title(::std::string* title) {
+  if (title != NULL) {
+    
+  } else {
+    
+  }
+  title_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title);
+  // @@protoc_insertion_point(field_set_allocated:lego.Question.title)
+}
+
+// int32 response_type = 3;
+void Question::clear_response_type() {
+  response_type_ = 0;
+}
+::google::protobuf::int32 Question::response_type() const {
+  // @@protoc_insertion_point(field_get:lego.Question.response_type)
+  return response_type_;
+}
+void Question::set_response_type(::google::protobuf::int32 value) {
+  
+  response_type_ = value;
+  // @@protoc_insertion_point(field_set:lego.Question.response_type)
+}
+
+// string description = 4;
+void Question::clear_description() {
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& Question::description() const {
+  // @@protoc_insertion_point(field_get:lego.Question.description)
+  return description_.GetNoArena();
+}
+void Question::set_description(const ::std::string& value) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Question.description)
+}
+#if LANG_CXX11
+void Question::set_description(::std::string&& value) {
+  
+  description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Question.description)
+}
+#endif
+void Question::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Question.description)
+}
+void Question::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Question.description)
+}
+::std::string* Question::mutable_description() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Question.description)
+  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Question::release_description() {
+  // @@protoc_insertion_point(field_release:lego.Question.description)
+  
+  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Question::set_allocated_description(::std::string* description) {
+  if (description != NULL) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:lego.Question.description)
+}
+
+// int32 order = 5;
+void Question::clear_order() {
+  order_ = 0;
+}
+::google::protobuf::int32 Question::order() const {
+  // @@protoc_insertion_point(field_get:lego.Question.order)
+  return order_;
+}
+void Question::set_order(::google::protobuf::int32 value) {
+  
+  order_ = value;
+  // @@protoc_insertion_point(field_set:lego.Question.order)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Page::kIdFieldNumber;
+const int Page::kTitleFieldNumber;
+const int Page::kOrderFieldNumber;
+const int Page::kQuestionsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Page::Page()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_lego_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:lego.Page)
+}
+Page::Page(const Page& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      questions_(from.questions_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.id().size() > 0) {
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  title_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.title().size() > 0) {
+    title_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.title_);
+  }
+  order_ = from.order_;
+  // @@protoc_insertion_point(copy_constructor:lego.Page)
+}
+
+void Page::SharedCtor() {
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  title_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  order_ = 0;
+  _cached_size_ = 0;
+}
+
+Page::~Page() {
+  // @@protoc_insertion_point(destructor:lego.Page)
+  SharedDtor();
+}
+
+void Page::SharedDtor() {
+  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  title_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void Page::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Page::descriptor() {
+  protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Page& Page::default_instance() {
+  protobuf_lego_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+Page* Page::New(::google::protobuf::Arena* arena) const {
+  Page* n = new Page;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Page::Clear() {
+// @@protoc_insertion_point(message_clear_start:lego.Page)
+  questions_.Clear();
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  order_ = 0;
+}
+
+bool Page::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:lego.Page)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->id().data(), this->id().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "lego.Page.id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string title = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_title()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->title().data(), this->title().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "lego.Page.title"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 order = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &order_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .lego.Question questions = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_questions()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:lego.Page)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:lego.Page)
+  return false;
+#undef DO_
+}
+
+void Page::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:lego.Page)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), this->id().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Page.id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->id(), output);
+  }
+
+  // string title = 2;
+  if (this->title().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->title().data(), this->title().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Page.title");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->title(), output);
+  }
+
+  // int32 order = 3;
+  if (this->order() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->order(), output);
+  }
+
+  // repeated .lego.Question questions = 4;
+  for (unsigned int i = 0, n = this->questions_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->questions(i), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:lego.Page)
+}
+
+::google::protobuf::uint8* Page::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:lego.Page)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), this->id().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Page.id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->id(), target);
+  }
+
+  // string title = 2;
+  if (this->title().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->title().data(), this->title().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Page.title");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->title(), target);
+  }
+
+  // int32 order = 3;
+  if (this->order() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->order(), target);
+  }
+
+  // repeated .lego.Question questions = 4;
+  for (unsigned int i = 0, n = this->questions_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        4, this->questions(i), deterministic, target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:lego.Page)
+  return target;
+}
+
+size_t Page::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:lego.Page)
+  size_t total_size = 0;
+
+  // repeated .lego.Question questions = 4;
+  {
+    unsigned int count = this->questions_size();
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->questions(i));
+    }
+  }
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->id());
+  }
+
+  // string title = 2;
+  if (this->title().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->title());
+  }
+
+  // int32 order = 3;
+  if (this->order() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->order());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Page::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:lego.Page)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Page* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Page>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:lego.Page)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:lego.Page)
+    MergeFrom(*source);
+  }
+}
+
+void Page::MergeFrom(const Page& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:lego.Page)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  questions_.MergeFrom(from.questions_);
+  if (from.id().size() > 0) {
+
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  if (from.title().size() > 0) {
+
+    title_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.title_);
+  }
+  if (from.order() != 0) {
+    set_order(from.order());
+  }
+}
+
+void Page::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:lego.Page)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Page::CopyFrom(const Page& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:lego.Page)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Page::IsInitialized() const {
+  return true;
+}
+
+void Page::Swap(Page* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Page::InternalSwap(Page* other) {
+  questions_.InternalSwap(&other->questions_);
+  id_.Swap(&other->id_);
+  title_.Swap(&other->title_);
+  std::swap(order_, other->order_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Page::GetMetadata() const {
+  protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Page
+
+// string id = 1;
+void Page::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& Page::id() const {
+  // @@protoc_insertion_point(field_get:lego.Page.id)
+  return id_.GetNoArena();
+}
+void Page::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Page.id)
+}
+#if LANG_CXX11
+void Page::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Page.id)
+}
+#endif
+void Page::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Page.id)
+}
+void Page::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Page.id)
+}
+::std::string* Page::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Page.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Page::release_id() {
+  // @@protoc_insertion_point(field_release:lego.Page.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Page::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:lego.Page.id)
+}
+
+// string title = 2;
+void Page::clear_title() {
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& Page::title() const {
+  // @@protoc_insertion_point(field_get:lego.Page.title)
+  return title_.GetNoArena();
+}
+void Page::set_title(const ::std::string& value) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Page.title)
+}
+#if LANG_CXX11
+void Page::set_title(::std::string&& value) {
+  
+  title_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Page.title)
+}
+#endif
+void Page::set_title(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Page.title)
+}
+void Page::set_title(const char* value, size_t size) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Page.title)
+}
+::std::string* Page::mutable_title() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Page.title)
+  return title_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Page::release_title() {
+  // @@protoc_insertion_point(field_release:lego.Page.title)
+  
+  return title_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Page::set_allocated_title(::std::string* title) {
+  if (title != NULL) {
+    
+  } else {
+    
+  }
+  title_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title);
+  // @@protoc_insertion_point(field_set_allocated:lego.Page.title)
+}
+
+// int32 order = 3;
+void Page::clear_order() {
+  order_ = 0;
+}
+::google::protobuf::int32 Page::order() const {
+  // @@protoc_insertion_point(field_get:lego.Page.order)
+  return order_;
+}
+void Page::set_order(::google::protobuf::int32 value) {
+  
+  order_ = value;
+  // @@protoc_insertion_point(field_set:lego.Page.order)
+}
+
+// repeated .lego.Question questions = 4;
+int Page::questions_size() const {
+  return questions_.size();
+}
+void Page::clear_questions() {
+  questions_.Clear();
+}
+const ::lego::Question& Page::questions(int index) const {
+  // @@protoc_insertion_point(field_get:lego.Page.questions)
+  return questions_.Get(index);
+}
+::lego::Question* Page::mutable_questions(int index) {
+  // @@protoc_insertion_point(field_mutable:lego.Page.questions)
+  return questions_.Mutable(index);
+}
+::lego::Question* Page::add_questions() {
+  // @@protoc_insertion_point(field_add:lego.Page.questions)
+  return questions_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::lego::Question >*
+Page::mutable_questions() {
+  // @@protoc_insertion_point(field_mutable_list:lego.Page.questions)
+  return &questions_;
+}
+const ::google::protobuf::RepeatedPtrField< ::lego::Question >&
+Page::questions() const {
+  // @@protoc_insertion_point(field_list:lego.Page.questions)
+  return questions_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Template::kIdFieldNumber;
+const int Template::kNameFieldNumber;
+const int Template::kPagesFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Template::Template()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_lego_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:lego.Template)
+}
+Template::Template(const Template& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      pages_(from.pages_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.id().size() > 0) {
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.name().size() > 0) {
+    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  // @@protoc_insertion_point(copy_constructor:lego.Template)
+}
+
+void Template::SharedCtor() {
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
+}
+
+Template::~Template() {
+  // @@protoc_insertion_point(destructor:lego.Template)
+  SharedDtor();
+}
+
+void Template::SharedDtor() {
+  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void Template::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Template::descriptor() {
+  protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Template& Template::default_instance() {
+  protobuf_lego_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+Template* Template::New(::google::protobuf::Arena* arena) const {
+  Template* n = new Template;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Template::Clear() {
+// @@protoc_insertion_point(message_clear_start:lego.Template)
+  pages_.Clear();
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+bool Template::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:lego.Template)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->id().data(), this->id().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "lego.Template.id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string name = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->name().data(), this->name().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "lego.Template.name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .lego.Page pages = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_pages()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:lego.Template)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:lego.Template)
+  return false;
+#undef DO_
+}
+
+void Template::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:lego.Template)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), this->id().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Template.id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->id(), output);
+  }
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), this->name().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Template.name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->name(), output);
+  }
+
+  // repeated .lego.Page pages = 3;
+  for (unsigned int i = 0, n = this->pages_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->pages(i), output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:lego.Template)
+}
+
+::google::protobuf::uint8* Template::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:lego.Template)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), this->id().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Template.id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->id(), target);
+  }
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), this->name().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "lego.Template.name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->name(), target);
+  }
+
+  // repeated .lego.Page pages = 3;
+  for (unsigned int i = 0, n = this->pages_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        3, this->pages(i), deterministic, target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:lego.Template)
+  return target;
+}
+
+size_t Template::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:lego.Template)
+  size_t total_size = 0;
+
+  // repeated .lego.Page pages = 3;
+  {
+    unsigned int count = this->pages_size();
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->pages(i));
+    }
+  }
+
+  // string id = 1;
+  if (this->id().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->id());
+  }
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->name());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Template::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:lego.Template)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Template* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Template>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:lego.Template)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:lego.Template)
+    MergeFrom(*source);
+  }
+}
+
+void Template::MergeFrom(const Template& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:lego.Template)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  pages_.MergeFrom(from.pages_);
+  if (from.id().size() > 0) {
+
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+}
+
+void Template::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:lego.Template)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Template::CopyFrom(const Template& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:lego.Template)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Template::IsInitialized() const {
+  return true;
+}
+
+void Template::Swap(Template* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Template::InternalSwap(Template* other) {
+  pages_.InternalSwap(&other->pages_);
+  id_.Swap(&other->id_);
+  name_.Swap(&other->name_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Template::GetMetadata() const {
+  protobuf_lego_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_lego_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Template
+
+// string id = 1;
+void Template::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& Template::id() const {
+  // @@protoc_insertion_point(field_get:lego.Template.id)
+  return id_.GetNoArena();
+}
+void Template::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Template.id)
+}
+#if LANG_CXX11
+void Template::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Template.id)
+}
+#endif
+void Template::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Template.id)
+}
+void Template::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Template.id)
+}
+::std::string* Template::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Template.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Template::release_id() {
+  // @@protoc_insertion_point(field_release:lego.Template.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Template::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:lego.Template.id)
+}
+
+// string name = 2;
+void Template::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& Template::name() const {
+  // @@protoc_insertion_point(field_get:lego.Template.name)
+  return name_.GetNoArena();
+}
+void Template::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Template.name)
+}
+#if LANG_CXX11
+void Template::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Template.name)
+}
+#endif
+void Template::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Template.name)
+}
+void Template::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Template.name)
+}
+::std::string* Template::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Template.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Template::release_name() {
+  // @@protoc_insertion_point(field_release:lego.Template.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Template::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:lego.Template.name)
+}
+
+// repeated .lego.Page pages = 3;
+int Template::pages_size() const {
+  return pages_.size();
+}
+void Template::clear_pages() {
+  pages_.Clear();
+}
+const ::lego::Page& Template::pages(int index) const {
+  // @@protoc_insertion_point(field_get:lego.Template.pages)
+  return pages_.Get(index);
+}
+::lego::Page* Template::mutable_pages(int index) {
+  // @@protoc_insertion_point(field_mutable:lego.Template.pages)
+  return pages_.Mutable(index);
+}
+::lego::Page* Template::add_pages() {
+  // @@protoc_insertion_point(field_add:lego.Template.pages)
+  return pages_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::lego::Page >*
+Template::mutable_pages() {
+  // @@protoc_insertion_point(field_mutable_list:lego.Template.pages)
+  return &pages_;
+}
+const ::google::protobuf::RepeatedPtrField< ::lego::Page >&
+Template::pages() const {
+  // @@protoc_insertion_point(field_list:lego.Template.pages)
+  return pages_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

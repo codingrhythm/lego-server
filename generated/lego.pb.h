@@ -31,6 +31,9 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 namespace lego {
+class GetRequest;
+class GetRequestDefaultTypeInternal;
+extern GetRequestDefaultTypeInternal _GetRequest_default_instance_;
 class LegoRecord;
 class LegoRecordDefaultTypeInternal;
 extern LegoRecordDefaultTypeInternal _LegoRecord_default_instance_;
@@ -43,6 +46,15 @@ extern LegoRecordSectionDefaultTypeInternal _LegoRecordSection_default_instance_
 class LegoResponse;
 class LegoResponseDefaultTypeInternal;
 extern LegoResponseDefaultTypeInternal _LegoResponse_default_instance_;
+class Page;
+class PageDefaultTypeInternal;
+extern PageDefaultTypeInternal _Page_default_instance_;
+class Question;
+class QuestionDefaultTypeInternal;
+extern QuestionDefaultTypeInternal _Question_default_instance_;
+class Template;
+class TemplateDefaultTypeInternal;
+extern TemplateDefaultTypeInternal _Template_default_instance_;
 }  // namespace lego
 
 namespace lego {
@@ -62,6 +74,79 @@ void InitDefaults();
 }  // namespace protobuf_lego_2eproto
 
 // ===================================================================
+
+class GetRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:lego.GetRequest) */ {
+ public:
+  GetRequest();
+  virtual ~GetRequest();
+
+  GetRequest(const GetRequest& from);
+
+  inline GetRequest& operator=(const GetRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GetRequest& default_instance();
+
+  static inline const GetRequest* internal_default_instance() {
+    return reinterpret_cast<const GetRequest*>(
+               &_GetRequest_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    0;
+
+  void Swap(GetRequest* other);
+
+  // implements Message ----------------------------------------------
+
+  inline GetRequest* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  GetRequest* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const GetRequest& from);
+  void MergeFrom(const GetRequest& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(GetRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:lego.GetRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable int _cached_size_;
+  friend struct protobuf_lego_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
 class LegoRecordField : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:lego.LegoRecordField) */ {
  public:
@@ -83,7 +168,7 @@ class LegoRecordField : public ::google::protobuf::Message /* @@protoc_insertion
                &_LegoRecordField_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(LegoRecordField* other);
 
@@ -201,7 +286,7 @@ class LegoRecordSection : public ::google::protobuf::Message /* @@protoc_inserti
                &_LegoRecordSection_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(LegoRecordSection* other);
 
@@ -317,7 +402,7 @@ class LegoRecord : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_LegoRecord_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(LegoRecord* other);
 
@@ -433,7 +518,7 @@ class LegoResponse : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_LegoResponse_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(LegoResponse* other);
 
@@ -491,12 +576,387 @@ class LegoResponse : public ::google::protobuf::Message /* @@protoc_insertion_po
   mutable int _cached_size_;
   friend struct protobuf_lego_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class Question : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:lego.Question) */ {
+ public:
+  Question();
+  virtual ~Question();
+
+  Question(const Question& from);
+
+  inline Question& operator=(const Question& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Question& default_instance();
+
+  static inline const Question* internal_default_instance() {
+    return reinterpret_cast<const Question*>(
+               &_Question_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    5;
+
+  void Swap(Question* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Question* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  Question* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const Question& from);
+  void MergeFrom(const Question& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(Question* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string title = 2;
+  void clear_title();
+  static const int kTitleFieldNumber = 2;
+  const ::std::string& title() const;
+  void set_title(const ::std::string& value);
+  #if LANG_CXX11
+  void set_title(::std::string&& value);
+  #endif
+  void set_title(const char* value);
+  void set_title(const char* value, size_t size);
+  ::std::string* mutable_title();
+  ::std::string* release_title();
+  void set_allocated_title(::std::string* title);
+
+  // string description = 4;
+  void clear_description();
+  static const int kDescriptionFieldNumber = 4;
+  const ::std::string& description() const;
+  void set_description(const ::std::string& value);
+  #if LANG_CXX11
+  void set_description(::std::string&& value);
+  #endif
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  ::std::string* mutable_description();
+  ::std::string* release_description();
+  void set_allocated_description(::std::string* description);
+
+  // int32 response_type = 3;
+  void clear_response_type();
+  static const int kResponseTypeFieldNumber = 3;
+  ::google::protobuf::int32 response_type() const;
+  void set_response_type(::google::protobuf::int32 value);
+
+  // int32 order = 5;
+  void clear_order();
+  static const int kOrderFieldNumber = 5;
+  ::google::protobuf::int32 order() const;
+  void set_order(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:lego.Question)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr title_;
+  ::google::protobuf::internal::ArenaStringPtr description_;
+  ::google::protobuf::int32 response_type_;
+  ::google::protobuf::int32 order_;
+  mutable int _cached_size_;
+  friend struct protobuf_lego_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Page : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:lego.Page) */ {
+ public:
+  Page();
+  virtual ~Page();
+
+  Page(const Page& from);
+
+  inline Page& operator=(const Page& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Page& default_instance();
+
+  static inline const Page* internal_default_instance() {
+    return reinterpret_cast<const Page*>(
+               &_Page_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    6;
+
+  void Swap(Page* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Page* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  Page* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const Page& from);
+  void MergeFrom(const Page& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(Page* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .lego.Question questions = 4;
+  int questions_size() const;
+  void clear_questions();
+  static const int kQuestionsFieldNumber = 4;
+  const ::lego::Question& questions(int index) const;
+  ::lego::Question* mutable_questions(int index);
+  ::lego::Question* add_questions();
+  ::google::protobuf::RepeatedPtrField< ::lego::Question >*
+      mutable_questions();
+  const ::google::protobuf::RepeatedPtrField< ::lego::Question >&
+      questions() const;
+
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string title = 2;
+  void clear_title();
+  static const int kTitleFieldNumber = 2;
+  const ::std::string& title() const;
+  void set_title(const ::std::string& value);
+  #if LANG_CXX11
+  void set_title(::std::string&& value);
+  #endif
+  void set_title(const char* value);
+  void set_title(const char* value, size_t size);
+  ::std::string* mutable_title();
+  ::std::string* release_title();
+  void set_allocated_title(::std::string* title);
+
+  // int32 order = 3;
+  void clear_order();
+  static const int kOrderFieldNumber = 3;
+  ::google::protobuf::int32 order() const;
+  void set_order(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:lego.Page)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::lego::Question > questions_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr title_;
+  ::google::protobuf::int32 order_;
+  mutable int _cached_size_;
+  friend struct protobuf_lego_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Template : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:lego.Template) */ {
+ public:
+  Template();
+  virtual ~Template();
+
+  Template(const Template& from);
+
+  inline Template& operator=(const Template& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Template& default_instance();
+
+  static inline const Template* internal_default_instance() {
+    return reinterpret_cast<const Template*>(
+               &_Template_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    7;
+
+  void Swap(Template* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Template* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  Template* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const Template& from);
+  void MergeFrom(const Template& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(Template* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .lego.Page pages = 3;
+  int pages_size() const;
+  void clear_pages();
+  static const int kPagesFieldNumber = 3;
+  const ::lego::Page& pages(int index) const;
+  ::lego::Page* mutable_pages(int index);
+  ::lego::Page* add_pages();
+  ::google::protobuf::RepeatedPtrField< ::lego::Page >*
+      mutable_pages();
+  const ::google::protobuf::RepeatedPtrField< ::lego::Page >&
+      pages() const;
+
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string name = 2;
+  void clear_name();
+  static const int kNameFieldNumber = 2;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // @@protoc_insertion_point(class_scope:lego.Template)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::lego::Page > pages_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  mutable int _cached_size_;
+  friend struct protobuf_lego_2eproto::TableStruct;
+};
 // ===================================================================
 
 
 // ===================================================================
 
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
+// GetRequest
+
+// -------------------------------------------------------------------
+
 // LegoRecordField
 
 // string id = 1;
@@ -956,7 +1416,500 @@ inline void LegoResponse::set_success(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:lego.LegoResponse.success)
 }
 
+// -------------------------------------------------------------------
+
+// Question
+
+// string id = 1;
+inline void Question::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Question::id() const {
+  // @@protoc_insertion_point(field_get:lego.Question.id)
+  return id_.GetNoArena();
+}
+inline void Question::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Question.id)
+}
+#if LANG_CXX11
+inline void Question::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Question.id)
+}
+#endif
+inline void Question::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Question.id)
+}
+inline void Question::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Question.id)
+}
+inline ::std::string* Question::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Question.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Question::release_id() {
+  // @@protoc_insertion_point(field_release:lego.Question.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Question::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:lego.Question.id)
+}
+
+// string title = 2;
+inline void Question::clear_title() {
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Question::title() const {
+  // @@protoc_insertion_point(field_get:lego.Question.title)
+  return title_.GetNoArena();
+}
+inline void Question::set_title(const ::std::string& value) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Question.title)
+}
+#if LANG_CXX11
+inline void Question::set_title(::std::string&& value) {
+  
+  title_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Question.title)
+}
+#endif
+inline void Question::set_title(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Question.title)
+}
+inline void Question::set_title(const char* value, size_t size) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Question.title)
+}
+inline ::std::string* Question::mutable_title() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Question.title)
+  return title_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Question::release_title() {
+  // @@protoc_insertion_point(field_release:lego.Question.title)
+  
+  return title_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Question::set_allocated_title(::std::string* title) {
+  if (title != NULL) {
+    
+  } else {
+    
+  }
+  title_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title);
+  // @@protoc_insertion_point(field_set_allocated:lego.Question.title)
+}
+
+// int32 response_type = 3;
+inline void Question::clear_response_type() {
+  response_type_ = 0;
+}
+inline ::google::protobuf::int32 Question::response_type() const {
+  // @@protoc_insertion_point(field_get:lego.Question.response_type)
+  return response_type_;
+}
+inline void Question::set_response_type(::google::protobuf::int32 value) {
+  
+  response_type_ = value;
+  // @@protoc_insertion_point(field_set:lego.Question.response_type)
+}
+
+// string description = 4;
+inline void Question::clear_description() {
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Question::description() const {
+  // @@protoc_insertion_point(field_get:lego.Question.description)
+  return description_.GetNoArena();
+}
+inline void Question::set_description(const ::std::string& value) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Question.description)
+}
+#if LANG_CXX11
+inline void Question::set_description(::std::string&& value) {
+  
+  description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Question.description)
+}
+#endif
+inline void Question::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Question.description)
+}
+inline void Question::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Question.description)
+}
+inline ::std::string* Question::mutable_description() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Question.description)
+  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Question::release_description() {
+  // @@protoc_insertion_point(field_release:lego.Question.description)
+  
+  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Question::set_allocated_description(::std::string* description) {
+  if (description != NULL) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:lego.Question.description)
+}
+
+// int32 order = 5;
+inline void Question::clear_order() {
+  order_ = 0;
+}
+inline ::google::protobuf::int32 Question::order() const {
+  // @@protoc_insertion_point(field_get:lego.Question.order)
+  return order_;
+}
+inline void Question::set_order(::google::protobuf::int32 value) {
+  
+  order_ = value;
+  // @@protoc_insertion_point(field_set:lego.Question.order)
+}
+
+// -------------------------------------------------------------------
+
+// Page
+
+// string id = 1;
+inline void Page::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Page::id() const {
+  // @@protoc_insertion_point(field_get:lego.Page.id)
+  return id_.GetNoArena();
+}
+inline void Page::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Page.id)
+}
+#if LANG_CXX11
+inline void Page::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Page.id)
+}
+#endif
+inline void Page::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Page.id)
+}
+inline void Page::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Page.id)
+}
+inline ::std::string* Page::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Page.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Page::release_id() {
+  // @@protoc_insertion_point(field_release:lego.Page.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Page::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:lego.Page.id)
+}
+
+// string title = 2;
+inline void Page::clear_title() {
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Page::title() const {
+  // @@protoc_insertion_point(field_get:lego.Page.title)
+  return title_.GetNoArena();
+}
+inline void Page::set_title(const ::std::string& value) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Page.title)
+}
+#if LANG_CXX11
+inline void Page::set_title(::std::string&& value) {
+  
+  title_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Page.title)
+}
+#endif
+inline void Page::set_title(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Page.title)
+}
+inline void Page::set_title(const char* value, size_t size) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Page.title)
+}
+inline ::std::string* Page::mutable_title() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Page.title)
+  return title_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Page::release_title() {
+  // @@protoc_insertion_point(field_release:lego.Page.title)
+  
+  return title_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Page::set_allocated_title(::std::string* title) {
+  if (title != NULL) {
+    
+  } else {
+    
+  }
+  title_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title);
+  // @@protoc_insertion_point(field_set_allocated:lego.Page.title)
+}
+
+// int32 order = 3;
+inline void Page::clear_order() {
+  order_ = 0;
+}
+inline ::google::protobuf::int32 Page::order() const {
+  // @@protoc_insertion_point(field_get:lego.Page.order)
+  return order_;
+}
+inline void Page::set_order(::google::protobuf::int32 value) {
+  
+  order_ = value;
+  // @@protoc_insertion_point(field_set:lego.Page.order)
+}
+
+// repeated .lego.Question questions = 4;
+inline int Page::questions_size() const {
+  return questions_.size();
+}
+inline void Page::clear_questions() {
+  questions_.Clear();
+}
+inline const ::lego::Question& Page::questions(int index) const {
+  // @@protoc_insertion_point(field_get:lego.Page.questions)
+  return questions_.Get(index);
+}
+inline ::lego::Question* Page::mutable_questions(int index) {
+  // @@protoc_insertion_point(field_mutable:lego.Page.questions)
+  return questions_.Mutable(index);
+}
+inline ::lego::Question* Page::add_questions() {
+  // @@protoc_insertion_point(field_add:lego.Page.questions)
+  return questions_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::lego::Question >*
+Page::mutable_questions() {
+  // @@protoc_insertion_point(field_mutable_list:lego.Page.questions)
+  return &questions_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::lego::Question >&
+Page::questions() const {
+  // @@protoc_insertion_point(field_list:lego.Page.questions)
+  return questions_;
+}
+
+// -------------------------------------------------------------------
+
+// Template
+
+// string id = 1;
+inline void Template::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Template::id() const {
+  // @@protoc_insertion_point(field_get:lego.Template.id)
+  return id_.GetNoArena();
+}
+inline void Template::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Template.id)
+}
+#if LANG_CXX11
+inline void Template::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Template.id)
+}
+#endif
+inline void Template::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Template.id)
+}
+inline void Template::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Template.id)
+}
+inline ::std::string* Template::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Template.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Template::release_id() {
+  // @@protoc_insertion_point(field_release:lego.Template.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Template::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:lego.Template.id)
+}
+
+// string name = 2;
+inline void Template::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Template::name() const {
+  // @@protoc_insertion_point(field_get:lego.Template.name)
+  return name_.GetNoArena();
+}
+inline void Template::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:lego.Template.name)
+}
+#if LANG_CXX11
+inline void Template::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:lego.Template.name)
+}
+#endif
+inline void Template::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:lego.Template.name)
+}
+inline void Template::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:lego.Template.name)
+}
+inline ::std::string* Template::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:lego.Template.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Template::release_name() {
+  // @@protoc_insertion_point(field_release:lego.Template.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Template::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:lego.Template.name)
+}
+
+// repeated .lego.Page pages = 3;
+inline int Template::pages_size() const {
+  return pages_.size();
+}
+inline void Template::clear_pages() {
+  pages_.Clear();
+}
+inline const ::lego::Page& Template::pages(int index) const {
+  // @@protoc_insertion_point(field_get:lego.Template.pages)
+  return pages_.Get(index);
+}
+inline ::lego::Page* Template::mutable_pages(int index) {
+  // @@protoc_insertion_point(field_mutable:lego.Template.pages)
+  return pages_.Mutable(index);
+}
+inline ::lego::Page* Template::add_pages() {
+  // @@protoc_insertion_point(field_add:lego.Template.pages)
+  return pages_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::lego::Page >*
+Template::mutable_pages() {
+  // @@protoc_insertion_point(field_mutable_list:lego.Template.pages)
+  return &pages_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::lego::Page >&
+Template::pages() const {
+  // @@protoc_insertion_point(field_list:lego.Template.pages)
+  return pages_;
+}
+
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

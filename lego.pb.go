@@ -8,10 +8,14 @@ It is generated from these files:
 	lego.proto
 
 It has these top-level messages:
+	GetRequest
 	LegoRecordField
 	LegoRecordSection
 	LegoRecord
 	LegoResponse
+	Question
+	Page
+	Template
 */
 package lego
 
@@ -35,6 +39,14 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
+type GetRequest struct {
+}
+
+func (m *GetRequest) Reset()                    { *m = GetRequest{} }
+func (m *GetRequest) String() string            { return proto.CompactTextString(m) }
+func (*GetRequest) ProtoMessage()               {}
+func (*GetRequest) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0} }
+
 type LegoRecordField struct {
 	Id   string `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
 	Name string `protobuf:"bytes,2,opt,name=name" json:"name,omitempty"`
@@ -44,7 +56,7 @@ type LegoRecordField struct {
 func (m *LegoRecordField) Reset()                    { *m = LegoRecordField{} }
 func (m *LegoRecordField) String() string            { return proto.CompactTextString(m) }
 func (*LegoRecordField) ProtoMessage()               {}
-func (*LegoRecordField) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0} }
+func (*LegoRecordField) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{1} }
 
 func (m *LegoRecordField) GetId() string {
 	if m != nil {
@@ -76,7 +88,7 @@ type LegoRecordSection struct {
 func (m *LegoRecordSection) Reset()                    { *m = LegoRecordSection{} }
 func (m *LegoRecordSection) String() string            { return proto.CompactTextString(m) }
 func (*LegoRecordSection) ProtoMessage()               {}
-func (*LegoRecordSection) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{1} }
+func (*LegoRecordSection) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{2} }
 
 func (m *LegoRecordSection) GetId() string {
 	if m != nil {
@@ -108,7 +120,7 @@ type LegoRecord struct {
 func (m *LegoRecord) Reset()                    { *m = LegoRecord{} }
 func (m *LegoRecord) String() string            { return proto.CompactTextString(m) }
 func (*LegoRecord) ProtoMessage()               {}
-func (*LegoRecord) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{2} }
+func (*LegoRecord) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{3} }
 
 func (m *LegoRecord) GetId() string {
 	if m != nil {
@@ -138,7 +150,7 @@ type LegoResponse struct {
 func (m *LegoResponse) Reset()                    { *m = LegoResponse{} }
 func (m *LegoResponse) String() string            { return proto.CompactTextString(m) }
 func (*LegoResponse) ProtoMessage()               {}
-func (*LegoResponse) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{3} }
+func (*LegoResponse) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{4} }
 
 func (m *LegoResponse) GetSuccess() int32 {
 	if m != nil {
@@ -147,11 +159,135 @@ func (m *LegoResponse) GetSuccess() int32 {
 	return 0
 }
 
+type Question struct {
+	Id           string `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
+	Title        string `protobuf:"bytes,2,opt,name=title" json:"title,omitempty"`
+	ResponseType int32  `protobuf:"varint,3,opt,name=response_type,json=responseType" json:"response_type,omitempty"`
+	Description  string `protobuf:"bytes,4,opt,name=description" json:"description,omitempty"`
+	Order        int32  `protobuf:"varint,5,opt,name=order" json:"order,omitempty"`
+}
+
+func (m *Question) Reset()                    { *m = Question{} }
+func (m *Question) String() string            { return proto.CompactTextString(m) }
+func (*Question) ProtoMessage()               {}
+func (*Question) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{5} }
+
+func (m *Question) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *Question) GetTitle() string {
+	if m != nil {
+		return m.Title
+	}
+	return ""
+}
+
+func (m *Question) GetResponseType() int32 {
+	if m != nil {
+		return m.ResponseType
+	}
+	return 0
+}
+
+func (m *Question) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
+func (m *Question) GetOrder() int32 {
+	if m != nil {
+		return m.Order
+	}
+	return 0
+}
+
+type Page struct {
+	Id        string      `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
+	Title     string      `protobuf:"bytes,2,opt,name=title" json:"title,omitempty"`
+	Order     int32       `protobuf:"varint,3,opt,name=order" json:"order,omitempty"`
+	Questions []*Question `protobuf:"bytes,4,rep,name=questions" json:"questions,omitempty"`
+}
+
+func (m *Page) Reset()                    { *m = Page{} }
+func (m *Page) String() string            { return proto.CompactTextString(m) }
+func (*Page) ProtoMessage()               {}
+func (*Page) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{6} }
+
+func (m *Page) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *Page) GetTitle() string {
+	if m != nil {
+		return m.Title
+	}
+	return ""
+}
+
+func (m *Page) GetOrder() int32 {
+	if m != nil {
+		return m.Order
+	}
+	return 0
+}
+
+func (m *Page) GetQuestions() []*Question {
+	if m != nil {
+		return m.Questions
+	}
+	return nil
+}
+
+type Template struct {
+	Id    string  `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
+	Name  string  `protobuf:"bytes,2,opt,name=name" json:"name,omitempty"`
+	Pages []*Page `protobuf:"bytes,3,rep,name=pages" json:"pages,omitempty"`
+}
+
+func (m *Template) Reset()                    { *m = Template{} }
+func (m *Template) String() string            { return proto.CompactTextString(m) }
+func (*Template) ProtoMessage()               {}
+func (*Template) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{7} }
+
+func (m *Template) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *Template) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *Template) GetPages() []*Page {
+	if m != nil {
+		return m.Pages
+	}
+	return nil
+}
+
 func init() {
+	proto.RegisterType((*GetRequest)(nil), "lego.GetRequest")
 	proto.RegisterType((*LegoRecordField)(nil), "lego.LegoRecordField")
 	proto.RegisterType((*LegoRecordSection)(nil), "lego.LegoRecordSection")
 	proto.RegisterType((*LegoRecord)(nil), "lego.LegoRecord")
 	proto.RegisterType((*LegoResponse)(nil), "lego.LegoResponse")
+	proto.RegisterType((*Question)(nil), "lego.Question")
+	proto.RegisterType((*Page)(nil), "lego.Page")
+	proto.RegisterType((*Template)(nil), "lego.Template")
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -166,6 +302,7 @@ const _ = grpc.SupportPackageIsVersion4
 
 type LegoClient interface {
 	SendRecord(ctx context.Context, in *LegoRecord, opts ...grpc.CallOption) (*LegoResponse, error)
+	GetData(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*Template, error)
 }
 
 type legoClient struct {
@@ -185,10 +322,20 @@ func (c *legoClient) SendRecord(ctx context.Context, in *LegoRecord, opts ...grp
 	return out, nil
 }
 
+func (c *legoClient) GetData(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*Template, error) {
+	out := new(Template)
+	err := grpc.Invoke(ctx, "/lego.Lego/GetData", in, out, c.cc, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for Lego service
 
 type LegoServer interface {
 	SendRecord(context.Context, *LegoRecord) (*LegoResponse, error)
+	GetData(context.Context, *GetRequest) (*Template, error)
 }
 
 func RegisterLegoServer(s *grpc.Server, srv LegoServer) {
@@ -213,6 +360,24 @@ func _Lego_SendRecord_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Lego_GetData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegoServer).GetData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/lego.Lego/GetData",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegoServer).GetData(ctx, req.(*GetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Lego_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "lego.Lego",
 	HandlerType: (*LegoServer)(nil),
@@ -220,6 +385,10 @@ var _Lego_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SendRecord",
 			Handler:    _Lego_SendRecord_Handler,
+		},
+		{
+			MethodName: "GetData",
+			Handler:    _Lego_GetData_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -229,19 +398,29 @@ var _Lego_serviceDesc = grpc.ServiceDesc{
 func init() { proto.RegisterFile("lego.proto", fileDescriptor0) }
 
 var fileDescriptor0 = []byte{
-	// 220 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x91, 0xcd, 0x6a, 0x85, 0x30,
-	0x14, 0x84, 0xf1, 0xa7, 0xb6, 0x3d, 0x2d, 0xfd, 0x09, 0x94, 0x86, 0xae, 0x24, 0x2b, 0x37, 0x75,
-	0xa1, 0xbb, 0x3e, 0x40, 0xa1, 0xd0, 0x55, 0x7c, 0x02, 0x9b, 0x1c, 0x25, 0x60, 0x13, 0x31, 0xde,
-	0xf7, 0xbf, 0x24, 0xd1, 0xeb, 0xc5, 0x95, 0xbb, 0xc9, 0x9c, 0x61, 0xbe, 0x81, 0x00, 0x0c, 0xd8,
-	0x9b, 0x72, 0x9c, 0xcc, 0x6c, 0x48, 0xea, 0x34, 0xfb, 0x81, 0xe7, 0x5f, 0xec, 0x0d, 0x47, 0x61,
-	0x26, 0xf9, 0xad, 0x70, 0x90, 0xe4, 0x09, 0x62, 0x25, 0x69, 0x94, 0x47, 0xc5, 0x3d, 0x8f, 0x95,
-	0x24, 0x04, 0x52, 0xdd, 0xfe, 0x23, 0x8d, 0xbd, 0xe3, 0xb5, 0xf3, 0x64, 0x3b, 0xb7, 0x34, 0x09,
-	0x9e, 0xd3, 0xac, 0x83, 0xd7, 0xad, 0xaa, 0x41, 0x31, 0x2b, 0xa3, 0x0f, 0x95, 0x7d, 0x42, 0xd6,
-	0x39, 0xb2, 0xa5, 0x49, 0x9e, 0x14, 0x0f, 0xd5, 0x5b, 0xe9, 0x67, 0xee, 0x76, 0xf1, 0x25, 0xc4,
-	0x10, 0x60, 0x3b, 0x1d, 0x02, 0xd4, 0x70, 0x67, 0xc3, 0x9e, 0x15, 0xf1, 0xbe, 0x47, 0x2c, 0x7b,
-	0xf9, 0x25, 0xc8, 0x0a, 0x78, 0x0c, 0x67, 0x3b, 0x1a, 0x6d, 0x91, 0x50, 0xb8, 0xb5, 0x27, 0x21,
-	0xd0, 0x5a, 0x4f, 0xbb, 0xe1, 0xeb, 0xb3, 0xfa, 0x82, 0xd4, 0x25, 0x49, 0x05, 0xd0, 0xa0, 0x96,
-	0xcb, 0xb0, 0x97, 0x3d, 0xe2, 0x83, 0x5c, 0x3b, 0xa1, 0xf5, 0x2f, 0xf3, 0x9f, 0x51, 0x9f, 0x03,
-	0x00, 0x00, 0xff, 0xff, 0xce, 0x2b, 0xf6, 0xf7, 0x9a, 0x01, 0x00, 0x00,
+	// 372 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x53, 0xc1, 0x8e, 0xda, 0x30,
+	0x10, 0x15, 0x24, 0xd9, 0x65, 0x07, 0x4a, 0x5b, 0xab, 0x55, 0x2d, 0x4e, 0x91, 0x7b, 0x41, 0x6a,
+	0xcb, 0x01, 0x7e, 0xa1, 0x2a, 0xaa, 0xd4, 0x03, 0x35, 0xdc, 0x2b, 0x37, 0x1e, 0xa2, 0x48, 0x21,
+	0x36, 0xb1, 0x39, 0xf0, 0x11, 0xfd, 0xe7, 0xca, 0x76, 0x4c, 0x10, 0xda, 0x43, 0x6e, 0x33, 0x6f,
+	0xc6, 0x6f, 0xde, 0xcc, 0x4b, 0x00, 0x6a, 0x2c, 0xd5, 0x4a, 0xb7, 0xca, 0x2a, 0x92, 0xba, 0x98,
+	0xcd, 0x00, 0xb6, 0x68, 0x39, 0x9e, 0x2f, 0x68, 0x2c, 0xfb, 0x09, 0x6f, 0x7f, 0x61, 0xa9, 0x38,
+	0x16, 0xaa, 0x95, 0x3f, 0x2a, 0xac, 0x25, 0x99, 0xc3, 0xb8, 0x92, 0x74, 0x94, 0x8f, 0x96, 0x2f,
+	0x7c, 0x5c, 0x49, 0x42, 0x20, 0x6d, 0xc4, 0x09, 0xe9, 0xd8, 0x23, 0x3e, 0x76, 0x98, 0x14, 0x56,
+	0xd0, 0x24, 0x60, 0x2e, 0x66, 0x47, 0x78, 0xdf, 0x53, 0xed, 0xb1, 0xb0, 0x95, 0x6a, 0x06, 0x91,
+	0x7d, 0x83, 0xa7, 0xa3, 0x9b, 0x6c, 0x68, 0x92, 0x27, 0xcb, 0xe9, 0xfa, 0xe3, 0xca, 0x8b, 0x7e,
+	0xd0, 0xc5, 0xbb, 0x26, 0x86, 0x00, 0x7d, 0x69, 0xd0, 0x80, 0x0d, 0x4c, 0x4c, 0xd0, 0x13, 0x47,
+	0x7c, 0x7a, 0x1c, 0xd1, 0xe9, 0xe5, 0xb7, 0x46, 0xb6, 0x84, 0x59, 0x28, 0x1b, 0xad, 0x1a, 0x83,
+	0x84, 0xc2, 0xb3, 0xb9, 0x14, 0x05, 0x1a, 0xe3, 0xa7, 0x65, 0x3c, 0xa6, 0xec, 0xdf, 0x08, 0x26,
+	0xbf, 0xdd, 0x35, 0x5f, 0x5b, 0xf8, 0x03, 0x64, 0xb6, 0xb2, 0x75, 0x14, 0x14, 0x12, 0xf2, 0x19,
+	0xde, 0xb4, 0x1d, 0xf1, 0x1f, 0x7b, 0xd5, 0xe8, 0x0f, 0x99, 0xf1, 0x59, 0x04, 0x0f, 0x57, 0x8d,
+	0x24, 0x87, 0xa9, 0x44, 0x53, 0xb4, 0x95, 0x76, 0xcc, 0x34, 0xf5, 0x04, 0xf7, 0x90, 0x23, 0x57,
+	0xad, 0xc4, 0x96, 0x66, 0xfe, 0x79, 0x48, 0x98, 0x86, 0x74, 0x27, 0x4a, 0x1c, 0x28, 0xe5, 0xc6,
+	0x91, 0xdc, 0x71, 0x90, 0xaf, 0xf0, 0x72, 0xee, 0x56, 0x32, 0x34, 0xf5, 0x37, 0x9b, 0x87, 0x9b,
+	0xc5, 0x4d, 0x79, 0xdf, 0xc0, 0x76, 0x30, 0x39, 0xe0, 0x49, 0xd7, 0xc2, 0xe2, 0x20, 0x43, 0x72,
+	0xc8, 0xb4, 0x28, 0x31, 0xba, 0x01, 0x81, 0xd9, 0x89, 0xe6, 0xa1, 0xb0, 0x2e, 0x21, 0x75, 0xd7,
+	0x27, 0x6b, 0x80, 0x3d, 0x36, 0xb2, 0x33, 0xfb, 0xdd, 0xa3, 0x6d, 0x0b, 0x72, 0x8f, 0x74, 0x4e,
+	0x7d, 0x81, 0xe7, 0x2d, 0xda, 0xef, 0xc2, 0x8a, 0xf8, 0xa0, 0xff, 0xe0, 0x17, 0xdd, 0x16, 0x51,
+	0xee, 0xdf, 0x27, 0xff, 0x6f, 0x6c, 0xfe, 0x07, 0x00, 0x00, 0xff, 0xff, 0xf1, 0xdb, 0x79, 0x66,
+	0x29, 0x03, 0x00, 0x00,
 }

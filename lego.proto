@@ -3,6 +3,11 @@ package lego;
 
 service Lego {
   rpc SendRecord (LegoRecord) returns (LegoResponse);
+  rpc GetData (GetRequest) returns (Template);
+}
+
+message GetRequest {
+
 }
 
 message LegoRecordField {
@@ -25,4 +30,25 @@ message LegoRecord {
 
 message LegoResponse {
   int32 success = 1;
+}
+
+message Question {
+  string id = 1;
+  string title = 2;
+  int32 response_type = 3;
+  string description = 4;
+  int32 order = 5;
+}
+
+message Page {
+  string id = 1;
+  string title = 2;
+  int32 order = 3;
+  repeated Question questions = 4;
+}
+
+message Template {
+  string id = 1;
+  string name = 2;
+  repeated Page pages = 3;
 }

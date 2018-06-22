@@ -42,10 +42,10 @@ func init() {
 // GenerateData generates template data
 func (g *DataGenerator) GenerateData() *Template {
 	var pages []*Page
-	for j := 0; j < 10; j++ {
+	for j := 0; j < 100; j++ {
 		var questions []*Question
 
-		for i := 0; i < 20; i++ {
+		for i := 0; i < 100; i++ {
 			question := &Question{
 				ID:           uuid.NewV4().String(),
 				Title:        "Question title",

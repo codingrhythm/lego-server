@@ -7,7 +7,7 @@ service Lego {
 }
 
 message GetRequest {
-
+  string flag = 1;
 }
 
 message LegoRecordField {

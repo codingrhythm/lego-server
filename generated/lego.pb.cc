@@ -358,13 +358,13 @@ void AddDescriptorsImpl() {
       "\005 \001(\005\"S\n\004Page\022\n\n\002id\030\001 \001(\t\022\r\n\005title\030\002 \001(\t"
       "\022\r\n\005order\030\003 \001(\005\022!\n\tquestions\030\004 \003(\0132\016.leg"
       "o.Question\"\?\n\010Template\022\n\n\002id\030\001 \001(\t\022\014\n\004na"
-      "me\030\002 \001(\t\022\031\n\005pages\030\003 \003(\0132\n.lego.Page2g\n\004L"
-      "ego\0222\n\nSendRecord\022\020.lego.LegoRecord\032\022.le"
-      "go.LegoResponse\022+\n\007GetData\022\020.lego.GetReq"
-      "uest\032\016.lego.Templateb\006proto3"
+      "me\030\002 \001(\t\022\031\n\005pages\030\003 \003(\0132\n.lego.Page2k\n\004L"
+      "ego\0224\n\nSendRecord\022\020.lego.LegoRecord\032\022.le"
+      "go.LegoResponse\"\000\022-\n\007GetData\022\020.lego.GetR"
+      "equest\032\016.lego.Template\"\000b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 668);
+      descriptor, 672);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "lego.proto", &protobuf_RegisterTypes);
 }

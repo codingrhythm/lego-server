@@ -15,6 +15,7 @@ var Srv *Server
 
 func init() {
 	Srv = &Server{}
+	log.Println("GRPC server started")
 }
 
 // Close closes any open connections that's associated with the server
@@ -26,11 +27,13 @@ func (s *Server) Close() {
 
 //SendRecord API
 func (s *Server) SendRecord(context.Context, *LegoRecord) (*LegoResponse, error) {
+	log.Println("Send record request")
 	return &LegoResponse{Success: 1}, nil
 }
 
 //GetData API
 func (s *Server) GetData(context.Context, *GetRequest) (*Template, error) {
+	log.Println("Get data request")
 	data := DataGen.GenerateData()
 	return data, nil
 }

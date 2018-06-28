@@ -2,8 +2,8 @@ syntax = "proto3";
 package lego;
 
 service Lego {
-  rpc SendRecord (LegoRecord) returns (LegoResponse);
-  rpc GetData (GetRequest) returns (Template);
+  rpc SendRecord (LegoRecord) returns (LegoResponse) {}
+  rpc GetData (GetRequest) returns (Template) {}
 }
 
 message GetRequest {

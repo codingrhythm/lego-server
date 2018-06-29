@@ -4,6 +4,13 @@ This is a demo server written in Golang. It performs some basic tasks such as im
 
 Image upload/download endpoints are only supported via HTTP/1.1.
 
+## How to run
+
+```
+cd cmd
+go run main.go
+```
+
 ## Endpoints
 
 ### GET /data/

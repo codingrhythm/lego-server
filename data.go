@@ -69,7 +69,7 @@ func (g *DataGenerator) GenerateData() *Template {
 
 	return &Template{
 		Id:    uuid.NewV4().String(),
-		Name:  "Template name",
+		Name:  uuid.NewV4().String(),
 		Pages: pages,
 	}
 }

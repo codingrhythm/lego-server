@@ -4,6 +4,10 @@ This is a demo server written in Golang. It performs some basic tasks such as im
 
 Image upload/download endpoints are only supported via HTTP/1.1.
 
+## Dependencies
+
+You will need to put this project in your local go directory. e.g. `/User/name/Projects/go/src/github.com/SafetyCulture/lego-server`. Run `dep ensure` to install all dependencies.
+
 ## How to run
 
 ```
